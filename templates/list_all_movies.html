@@ -5,5 +5,37 @@
 {% block body %}
 <h1 class="mb-5">All Movies</h1>
 <p class="mb-3">See our list of movie ratings below</p>
-<!-- TODO: Feature 1 -->
+{% if movies|length == 0 %}
+    <br><br>
+    <h1>You have not created any movie ratings!</h1>
+{% else %}
+    <table class="table table-success">
+        <thead>
+            <tr>
+                <th scope="col">Movie ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Director</th>
+                <th scope="col">Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for _, value in movies.items() %}
+            <tr>
+                <td>
+                    {{ value['movie_id'] }}
+                </td>
+                <td>
+                {{ value['title'] }}
+                </td>
+                <td>
+                {{ value['director'] }}
+                </td>
+                <td>
+                {{ value['rating'] }}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
 {% endblock %}
