@@ -1,8 +1,25 @@
-{% extends '_layout.html' %}
+{% extends '_layout.html' %} {% block title %} Movie Rating App | {{ movie.title
+}} {% endblock %} {% block body %}
+<div class="container mt-5">
+  <h1 class="mb-4">{{ movie.title }}</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <h4>Movie ID:</h4>
+      <p>{{ movie.movie_id }}</p>
+      <h4>Director:</h4>
+      <p>{{ movie.director }}</p>
+      <h4>Rating:</h4>
+      <p>{{ movie.rating }}</p>
+    </div>
 
-{% block title %}Movie Rating App | Movie{% endblock %}
-
-{% block body %}
-<h1 class="mb-5"></h1>
-<!-- TODO: Feature 4 -->
+    <div class="col-md-6">
+      <div class="mt-3">
+        <a href="/movies/{{ movie.movie_id }}/edit" class="btn btn-primary"
+          >Edit</a
+        >
+        <a href="" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
