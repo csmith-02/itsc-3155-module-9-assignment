@@ -4,5 +4,24 @@
 
 {% block body %}
 <h1 class="mb-5"></h1>
-<!-- TODO: Feature 5 -->
+
+<form action="/update_movie" method="post">
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" class="form-control" id="title" name="title" value="Movie Title">
+    </div>
+
+    <div class="form-group">
+        <label for="director">Director:</label>
+        <input type="text" class="form-control" id="director" name="director" value="Director Name">
+    </div>
+
+    <div class="form-group">
+        <label for="rating">Rating:</label>
+        <input type="number" class="form-control" id="rating" name="rating" value="5">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+
 {% endblock %}
