@@ -60,6 +60,3 @@ def update_movie(movie_id: int):
 def delete_movie(movie_id: int):
     # TODO: Feature 6
     pass
-
-if __name__ == "__main__":
-    app.run(debug=True)

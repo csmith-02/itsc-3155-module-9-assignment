@@ -12,6 +12,7 @@
     <table class="table table-success">
         <thead>
             <tr>
+                <th scope="col">Movie ID</th>
                 <th scope="col">Title</th>
                 <th scope="col">Director</th>
                 <th scope="col">Rating</th>
@@ -20,6 +21,9 @@
         <tbody>
             {% for _, value in movies.items() %}
             <tr>
+                <td>
+                    {{ value['movie_id'] }}
+                </td>
                 <td>
                 {{ value['title'] }}
                 </td>
