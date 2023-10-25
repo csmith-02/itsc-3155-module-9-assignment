@@ -16,7 +16,6 @@ def index():
 @app.get('/movies')
 def list_all_movies():
     # Feature 1
-    movie_repository.create_movie("a", "b", 3)
     movies = movie_repository.get_all_movies()
     return render_template('list_all_movies.html', list_movies_active=True, movies=movies)
 
@@ -47,7 +46,8 @@ def get_single_movie(movie_id: int):
 
 @app.get('/movies/<int:movie_id>/edit')
 def get_edit_movies_page(movie_id: int):
-    return render_template('edit_movies_form.html')
+    movie = movie_repository.get_movie_by_id(movie_id)
+    return render_template('edit_movies_form.html', movie=movie)
 
 
 @app.post('/movies/<int:movie_id>')
