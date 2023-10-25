@@ -6,7 +6,7 @@ This repository houses the scaffolding for a movie rating application. By the en
 2. As a user, I should be able to save a movie rating with the movie's name, director, and a 1-5 rating
 3. As a user, I should be able to search for a specific movie rating using the movie's title
 4. As a user, I should be able to view a movie in isolation and have access to edit and delete that movie.
-5. As a user, I should be able to edit a movie.
+5. As a user, I should be able to edit a movie. P
 6. As a user, I should be able to delete a movie.
 
 ## Python Version
