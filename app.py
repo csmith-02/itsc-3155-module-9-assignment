@@ -27,9 +27,19 @@ def create_movies_form():
 
 @app.post('/movies')
 def create_movie():
-    # TODO: Feature 2
+    # Feature 2
+    title = request.form.get('title')
+    director = request.form.get('director')
+    rating = request.form.get('rating')
+
+    if not title or not director or not rating:
+        abort(400)
+    
+    movie_repository.create_movie(title, director, int(rating))
+    
     # After creating the movie in the database, we redirect to the list all movies page
     return redirect('/movies')
+
 
 
 @app.get('/movies/search')
